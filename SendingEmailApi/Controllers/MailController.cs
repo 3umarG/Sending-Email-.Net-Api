@@ -28,5 +28,18 @@ namespace SendingEmailApi.Controllers
 				return BadRequest(ex.Message);
 			}
 		}
+
+		[HttpPost("welcome-email")]
+		public async Task<IActionResult> SendWelcomeEmailAsync([FromBody] WelcomeMailRequest request)
+		{
+			try
+			{
+				await _mailService.SendWelcomeEmailAsync(request);
+				return Ok("Send Welcome Email Successfully !!");
+			}catch(Exception e)
+			{
+				return BadRequest(e.Message);
+			}
+		}
 	}
 }
