@@ -1,5 +1,5 @@
-using MailKit;
 using SendingEmailApi.Models;
+using SendingEmailApi.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
